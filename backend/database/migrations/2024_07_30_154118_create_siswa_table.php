@@ -24,9 +24,8 @@ class CreateSiswaTable extends Migration
             $table->char('jk', 1)->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->string('tempat_lahir', 50)->nullable();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-
-            // Tabel calculated field 'umur' tidak diperlukan karena dihitung di model
+            $table->integer('umur')->virtualAs('TIMESTAMPDIFF(YEAR, tanggal_lahir, CURDATE())')->nullable();
+            $table->timestamps();
         });
     }
 

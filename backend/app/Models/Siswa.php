@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Siswa extends Model
 {
+    use HasFactory;
+
     protected $table = 'siswa';
 
     protected $fillable = [
@@ -18,14 +20,17 @@ class Siswa extends Model
         'rombel',
         'jk',
         'tanggal_lahir',
-        'tempat_lahir',
+        'tempat_lahir'
     ];
 
-    // Menentukan atribut umur
-    protected function umur(): Attribute
+    protected $dates = [
+        'tanggal_lahir',
+    ];
+
+    protected $appends = ['umur'];
+
+    public function getUmurAttribute()
     {
-        return new Attribute(
-            get: fn () => \Carbon\Carbon::parse($this->tanggal_lahir)->age,
-        );
+        return $this->attributes['umur'];
     }
 }
