@@ -13,7 +13,7 @@ class CreateKebutuhanKhususSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('kebutuhan_khusus_siswa', function (Blueprint $table) {
+        Schema::create('siswa_kebutuhan_khusus', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('kebutuhan_khusus', 100)->nullable();
@@ -30,6 +30,6 @@ class CreateKebutuhanKhususSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kebutuhan_khusus_siswa');
+        Schema::dropIfExists('siswa_kebutuhan_khusus');
     }
 }

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DetailSiswa extends Model
+class SiswaDetail extends Model
 {
-    protected $table = 'detail_siswa';
+    protected $table = 'siswa_detail';
 
     protected $fillable = [
         'siswa_id',

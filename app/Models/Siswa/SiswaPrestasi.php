@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BeasiswaSiswa extends Model
+class SiswaPrestasi extends Model
 {
-    protected $table = 'beasiswa_siswa';
+    protected $table = 'siswa_prestasi';
 
     protected $fillable = [
         'siswa_id',
-        'jenis_beasiswa',
-        'tahun_mulai',
-        'tahun_selesai',
+        'jenis_prestasi',
+        'tingkat',
+        'tahun',
+        'penyelenggara',
         'keterangan',
     ];
 
