@@ -13,7 +13,7 @@ class CreateAlamatSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_alamat', function (Blueprint $table) {
+        Schema::create('alamat_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('status_rumah_siswa', 50)->nullable();
@@ -37,6 +37,6 @@ class CreateAlamatSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_alamat');
+        Schema::dropIfExists('alamat_siswa');
     }
 }

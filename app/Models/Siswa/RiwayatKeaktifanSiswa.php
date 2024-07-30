@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SiswaKebutuhanKhusus extends Model
+class RiwayatKeaktifanSiswa extends Model
 {
-    protected $table = 'siswa_kebutuhan_khusus';
+    protected $table = 'riwayat_keaktifan_siswa';
 
     protected $fillable = [
         'siswa_id',
-        'kebutuhan_khusus',
-        'kebutuhan_disabilitas',
+        'tahun_ajaran',
+        'semester',
+        'status_keaktifan',
+        'keterangan',
     ];
 
     // Relasi dengan model Siswa

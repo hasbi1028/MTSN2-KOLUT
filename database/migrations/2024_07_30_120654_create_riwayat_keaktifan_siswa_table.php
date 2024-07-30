@@ -13,7 +13,7 @@ class CreateRiwayatKeaktifanSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_riwayat_keaktifan', function (Blueprint $table) {
+        Schema::create('riwayat_keaktifan_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('tahun_ajaran', 20)->nullable();
@@ -32,6 +32,6 @@ class CreateRiwayatKeaktifanSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_riwayat_keaktifan');
+        Schema::dropIfExists('riwayat_keaktifan_siswa');
     }
 }

@@ -13,7 +13,7 @@ class CreateDetailSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_detail', function (Blueprint $table) {
+        Schema::create('detail_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('nik', 20)->nullable();
@@ -50,6 +50,6 @@ class CreateDetailSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_detail');
+        Schema::dropIfExists('detail_siswa');
     }
 }

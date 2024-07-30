@@ -13,7 +13,7 @@ class CreateBeasiswaSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_beasiswa', function (Blueprint $table) {
+        Schema::create('beasiswa_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('jenis_beasiswa', 100)->nullable();
@@ -32,6 +32,6 @@ class CreateBeasiswaSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_beasiswa');
+        Schema::dropIfExists('beasiswa_siswa');
     }
 }

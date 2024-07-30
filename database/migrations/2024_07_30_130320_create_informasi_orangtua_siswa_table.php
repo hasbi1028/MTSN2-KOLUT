@@ -13,7 +13,7 @@ class CreateInformasiOrangtuaSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_informasi_orangtua', function (Blueprint $table) {
+        Schema::create('informasi_orangtua_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->string('nama_ayah', 100)->nullable();
@@ -60,6 +60,6 @@ class CreateInformasiOrangtuaSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_informasi_orangtua');
+        Schema::dropIfExists('informasi_orangtua_siswa');
     }
 }
