@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRiwayatKeaktifanSiswaTable extends Migration
+class CreateKebutuhanKhususSiswaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateRiwayatKeaktifanSiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('riwayat_keaktifan_siswa', function (Blueprint $table) {
+        Schema::create('kebutuhan_khusus_siswa', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
-            $table->string('tahun_ajaran', 20)->nullable();
-            $table->string('semester', 10)->nullable();
-            $table->string('status_keaktifan', 50)->nullable();
-            $table->text('keterangan')->nullable();
+            $table->string('kebutuhan_khusus', 100)->nullable();
+            $table->string('kebutuhan_disabilitas', 100)->nullable();
 
             $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade');
         });
@@ -32,6 +30,6 @@ class CreateRiwayatKeaktifanSiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('riwayat_keaktifan_siswa');
+        Schema::dropIfExists('kebutuhan_khusus_siswa');
     }
 }
